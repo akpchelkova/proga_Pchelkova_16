@@ -49,17 +49,17 @@ MainWindow::~MainWindow() {
 
 
 void MainWindow::numberPressed(const QString &number) {
-    // Если мы уже выбрали оператор, перемещаем к новому числу
+    // Если оператор уже выбран, перемещаю к новому числу
     display->setText(display->text() + number);
 }
 
 void MainWindow::handleOperator(const QString &op) {
-    // Устанавливаем operand1 как текущее значение дисплея
+    // Устанавливаю operand1 как текущее значение дисплея
     if (!display->text().isEmpty()) {
         operand1 = display->text().toDouble();
     }
-    pendingOperator = op;  // Устанавливаем текущий оператор
-    display->clear();      // Очищаем дисплей для следующего ввода
+    pendingOperator = op;  // Устанавливаю текущий оператор
+    display->clear();      // Очищаю дисплей для следующего ввода
 }
 
 void MainWindow::calculate() {
@@ -67,7 +67,7 @@ void MainWindow::calculate() {
         return;
     }
 
-    // Устанавливаем operand2 значение из дисплея
+    // Устанавливаю operand2 значение из дисплея
     operand2 = display->text().toDouble();
     double result = 0;
 
@@ -87,10 +87,10 @@ void MainWindow::calculate() {
         }
     }
 
-    // Обновляем дисплей результатом и operand1 для следующего вычисления
+    // Обновляю дисплей результатом и operand1 для следующего вычисления
     display->setText(QString::number(result));
-    operand1 = result;  // Устанавливаем результат как новый operand1
-    pendingOperator.clear();  // Очищаем оператор
+    operand1 = result;  // Устанавливаю результат как новый operand1
+    pendingOperator.clear();  // Очищаю оператор
 }
 
 void MainWindow::clear() {
