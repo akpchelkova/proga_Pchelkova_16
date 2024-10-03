@@ -16,7 +16,7 @@ public:
 
 private slots:
     void numberPressed(const QString &number);
-    void handleOperator(const QString &op); // Добавлено объявление
+    void handleOperator(const QString &op); 
     void calculate();
     void clear();
 
